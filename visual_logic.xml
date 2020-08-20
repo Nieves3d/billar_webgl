@@ -1,0 +1,1575 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="422.73100731184786" scrolly="263.78579731322634" scale="0.6091554258258183">
+    <block xmlns="https://developers.google.com/blockly/xml" type="initSettings" id="S!uY2bE|~3D|m4gIv5Zu" x="-530" y="-290">
+      <field name="LOAD_COMP_ASSETS">TRUE</field>
+      <field name="FULLSCREEN">TRUE</field>
+      <field name="BKG_TRANSPARENCY">TRUE</field>
+      <field name="PRESERVE_DRAW_BUF">TRUE</field>
+      <field name="FADE_ANNOTATIONS">TRUE</field>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="initPreloader" id="!X:TsH!w8?th8,_Z},=f" x="-470" y="-110">
+      <statement name="DO_PROGRESS">
+        <block type="setHTMLElemAttribute" id="}$IXa_U40(F0%EiJZtWi">
+          <field name="ATTRIBUTE">innerHTML</field>
+          <field name="PARENT">TRUE</field>
+          <value name="VALUE">
+            <block type="text_join" id="GKy~?`({626Q*FE+xVmy">
+              <mutation items="2"/>
+              <value name="ADD0">
+                <block type="percentage" id="ZnXMPE(zPo-;4tV([Z?]"/>
+              </value>
+              <value name="ADD1">
+                <block type="text" id="r[*~vf.Orqi.N}/98kW8">
+                  <field name="TEXT">%</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <value name="ID">
+            <block type="text" id="tEkbj,Dj+InEDdu[I,!Y">
+              <field name="TEXT">percentage</field>
+            </block>
+          </value>
+          <next>
+            <block type="setHTMLElemStyle" id="rN5~u4YB9?/w`YaKLG_E">
+              <field name="PROPERTY">width</field>
+              <field name="PARENT">TRUE</field>
+              <value name="VALUE">
+                <block type="text_join" id="if):Lwxq~j9pYc,QZZAP">
+                  <mutation items="2"/>
+                  <value name="ADD0">
+                    <block type="percentage" id="tV:U4rCV)ILNb6)han1X"/>
+                  </value>
+                  <value name="ADD1">
+                    <block type="text" id="MxV2.?%g/J+jpnb,G(!y">
+                      <field name="TEXT">%</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="text" id="vC[~0(XQ+QH|`5XZMIIp">
+                  <field name="TEXT">Progress_Bars_col</field>
+                </block>
+              </value>
+            </block>
+          </next>
+        </block>
+      </statement>
+      <statement name="DO_END">
+        <block type="setHTMLElemStyle" id="EW~jt^cs$#2G~wABC=[R">
+          <field name="PROPERTY">display</field>
+          <field name="PARENT">TRUE</field>
+          <value name="VALUE">
+            <block type="text" id="d~/CYp7*DDcchaeXkegY">
+              <field name="TEXT">none</field>
+            </block>
+          </value>
+          <value name="ID">
+            <block type="text" id="x]MW)jV;NF+E:j)^SE;o">
+              <field name="TEXT">preloader-div</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <tab name="main" type="MainTab" active="true" scrollx="174.72803606113507" scrolly="-1331.044515389518" scale="0.5387568978066388">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="=AhL]2@zMA_2MTlwedf}" type="">saved_conf_url</variable>
+      <variable id="smfYot=Kva!@0hkSBsKm" type="">EsferaBool</variable>
+      <variable id=")*o_=fahOgfbRbkT+3@i" type="">relogbool</variable>
+      <variable id="7~W[|[L=/KV7IBw2Uneb" type="">cuadrobool</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="setHTMLElemStyle" id="t:LFatSp}5#JUGZNs7$A" x="-650" y="-430">
+      <field name="PROPERTY">display</field>
+      <field name="PARENT">FALSE</field>
+      <value name="VALUE">
+        <block type="text" id="}hND|pSn~b}MbF*5[.P%">
+          <field name="TEXT">block</field>
+        </block>
+      </value>
+      <value name="ID">
+        <block type="text" id=":@RnD.-rdr3cDPJCHU|2">
+          <field name="TEXT">hider</field>
+        </block>
+      </value>
+      <next>
+        <block type="controls_if" id="F+e:]bsrSL:+c;/ql1e#">
+          <mutation else="1"/>
+          <value name="IF0">
+            <block type="dictGet" id="HUuhq9ZV6vI_#uvMU:jc">
+              <value name="DICT">
+                <block type="getUrlData" id="7N?}Ix){!Q}=^i_DQIcx">
+                  <field name="KIND">PARAMS</field>
+                  <field name="PARENT">FALSE</field>
+                </block>
+              </value>
+              <value name="KEY">
+                <shadow type="text" id="`0%vchQaOt.?j@$^x{aZ">
+                  <field name="TEXT">image_url</field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="loadFile" id="e/k[s#_sh~Mihd9~-=GO">
+              <value name="URL">
+                <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                  <field name="TEXT">./mydata.txt</field>
+                </shadow>
+                <block type="dictGet" id="JLX)M9^a0IvgRKA[@ZHV">
+                  <value name="DICT">
+                    <block type="getUrlData" id="4u.dsJ@GF};#tTpotyey">
+                      <field name="KIND">PARAMS</field>
+                      <field name="PARENT">FALSE</field>
+                    </block>
+                  </value>
+                  <value name="KEY">
+                    <shadow type="text" id="k3I60xx99N.3KksRmN*0">
+                      <field name="TEXT">image_url</field>
+                    </shadow>
+                  </value>
+                </block>
+              </value>
+              <statement name="DO">
+                <block type="replaceTexture" id="C:T-e+-i}e;W~FxZFL#u">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" enabledoslot="true" flextexinput="false"></mutation>
+                  <field name="OLD_TEX_NAME">descarga3.jpg</field>
+                  <value name="MATERIAL">
+                    <block type="materialList" id="D^xa)7e;=7ala4x*@(9q">
+                      <field name="FIELDNAME">M_Cuadro_Foto_04</field>
+                    </block>
+                  </value>
+                  <value name="NEW_TEX_URL">
+                    <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                      <field name="TEXT">./newTexture.png</field>
+                    </shadow>
+                    <block type="loadedFile" id="X(jl.uWVpt-lsG:$.[Uv"/>
+                  </value>
+                  <statement name="DO">
+                    <block type="procedures_callnoreturn" id="qr+/NvD8z6WL[ToC^W0v">
+                      <mutation name="frame_rescale"/>
+                      <next>
+                        <block type="setTimeout" id="aHgY^2jJ2aYR+B(L2(^|">
+                          <value name="VALUE">
+                            <shadow type="math_number" id="y./4[T/iR[AfGHF=uc]r">
+                              <field name="NUM">0.2</field>
+                            </shadow>
+                          </value>
+                          <statement name="DO">
+                            <block type="setHTMLElemStyle" id="l^+fw|LNF|^+^DfR9+5[">
+                              <field name="PROPERTY">display</field>
+                              <field name="PARENT">FALSE</field>
+                              <value name="VALUE">
+                                <block type="text" id="$8;aVsE:kt[q*H_sl:}f">
+                                  <field name="TEXT">none</field>
+                                </block>
+                              </value>
+                              <value name="ID">
+                                <block type="text" id="plXp^HRm+0Spd;U*%K3u">
+                                  <field name="TEXT">hider</field>
+                                </block>
+                              </value>
+                            </block>
+                          </statement>
+                        </block>
+                      </next>
+                    </block>
+                  </statement>
+                </block>
+              </statement>
+            </block>
+          </statement>
+          <statement name="ELSE">
+            <block type="setHTMLElemStyle" id="4]Fe!s[WyrGGo?0:bM)s">
+              <field name="PROPERTY">display</field>
+              <field name="PARENT">FALSE</field>
+              <value name="VALUE">
+                <block type="text" id="0][]LpqBrQ$U+kdYC4[V">
+                  <field name="TEXT">none</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="text" id="E9j(a79Bb|HXPPf!d.fq">
+                  <field name="TEXT">hider</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenHovered" id="fU-:4}?0R[8~RZ#;e:/#" x="-530" y="-50">
+      <value name="VALUE">
+        <block type="objectList" id="kVh)W9_:ZUFOCde~E=?y">
+          <field name="FIELDNAME">billar_Cuadro.003</field>
+        </block>
+      </value>
+      <statement name="DO_OVER">
+        <block type="outline" id=")e:6|Rx,7n*FejLW*=PX">
+          <field name="DO_WHAT">ENABLE</field>
+          <value name="TARGET">
+            <block type="objectList" id="Bl4HOG?Z;8_GIrKNW|^N">
+              <field name="FIELDNAME">billar_Cuadro.003</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <statement name="DO_OUT">
+        <block type="outline" id="bMC*b;WJD:`/k4TJ}9,R">
+          <field name="DO_WHAT">DISABLE</field>
+          <value name="TARGET">
+            <block type="objectList" id="K;/?DhyPh~DrDu)TBo+:">
+              <field name="FIELDNAME">billar_Cuadro.003</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="variables_set" id="iUE}2$@wlwhi+7:+YOK/" x="-530" y="110">
+      <field name="VAR" id="=AhL]2@zMA_2MTlwedf}">saved_conf_url</field>
+      <value name="VALUE">
+        <block type="getUrlData" id="?Wf2-Z2k~$:iR=jrr$uw">
+          <field name="KIND">URL</field>
+          <field name="PARENT">FALSE</field>
+        </block>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="6T0|$!2UEqDCVK#FqJ|_" x="-530" y="190">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+      <value name="VALUE">
+        <block type="objectList" id="jl]TQ/4|}O9+XyKUjJ:A">
+          <field name="FIELDNAME">billar_Cuadro.003</field>
+        </block>
+      </value>
+      <statement name="DO">
+        <block type="openFile" id=");#$M?%QH/t3tTi9?j.!">
+          <statement name="DO">
+            <block type="replaceTexture" id="C;mN78AhFAO%9#Lr8rjo">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" enabledoslot="true" flextexinput="false"></mutation>
+              <field name="OLD_TEX_NAME">descarga3.jpg</field>
+              <value name="MATERIAL">
+                <block type="materialList" id="By3ANqy{3;P=L%,gh(c$">
+                  <field name="FIELDNAME">M_Cuadro_Foto_04</field>
+                </block>
+              </value>
+              <value name="NEW_TEX_URL">
+                <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                  <field name="TEXT">./newTexture.png</field>
+                </shadow>
+                <block type="openedFile" id="ao6T|~P@Zm$hlaKm=|1U"/>
+              </value>
+              <statement name="DO">
+                <block type="procedures_callnoreturn" id="P|)Eqck`$N34#5u]$#$3">
+                  <mutation name="frame_rescale"/>
+                </block>
+              </statement>
+              <next>
+                <block type="sendData" id="X-5zvGRi{FbDmDjPc~cx">
+                  <value name="DATA">
+                    <block type="openedFile" id="J@-GvPgsl~_kl)F{#_xS"/>
+                  </value>
+                  <value name="URL">
+                    <shadow type="text" id="9=r[cb`c]M.^y=GmY^SL">
+                      <field name="TEXT">https://sandbox.soft8soft.com/wp-json/verge3d/v1/upload_file/</field>
+                    </shadow>
+                  </value>
+                  <statement name="DO">
+                    <block type="variables_set" id="izLMl3FI2zQ9fh`/#;lj">
+                      <field name="VAR" id="=AhL]2@zMA_2MTlwedf}">saved_conf_url</field>
+                      <value name="VALUE">
+                        <block type="setUrlParam" id="mrv{WWzzKKWGE~U(xnJ:">
+                          <value name="URL">
+                            <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                              <field name="TEXT">https://sandbox.soft8soft.com/</field>
+                            </shadow>
+                            <block type="getUrlData" id="8QG~tG#~6G4@NJY=G=^h">
+                              <field name="KIND">URL</field>
+                              <field name="PARENT">FALSE</field>
+                            </block>
+                          </value>
+                          <value name="NAME">
+                            <shadow type="text" id="sl%nq4vvu~p54#~$[TWd">
+                              <field name="TEXT">image_url</field>
+                            </shadow>
+                          </value>
+                          <value name="VALUE">
+                            <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                              <field name="TEXT"></field>
+                            </shadow>
+                            <block type="dictGet" id="gNWd,.+Y5f#x=ktM2cAV">
+                              <value name="DICT">
+                                <block type="loadedFile" id="t61PjCyQWF+B~0;kU(dQ"/>
+                              </value>
+                              <value name="KEY">
+                                <shadow type="text" id="-Pl%NJ%tQ`OL{aHx){.]">
+                                  <field name="TEXT">link</field>
+                                </shadow>
+                              </value>
+                            </block>
+                          </value>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="openWebPage" id="=bw:J;jPgv;,=0C12L~[">
+                          <field name="MODE">NO_RELOAD</field>
+                          <value name="URL">
+                            <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                              <field name="TEXT">https://www.soft8soft.com/</field>
+                            </shadow>
+                            <block type="variables_get" id="gk1g`@@{oQ+ndrD,|e.-">
+                              <field name="VAR" id="=AhL]2@zMA_2MTlwedf}">saved_conf_url</field>
+                            </block>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </statement>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="+d$bz4I6Wh]F(koVDXX!" x="-530" y="510">
+      <field name="NAME">frame_rescale</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="setObjTransform" id="i7~Sy((oL_aPOahe[AYe">
+          <field name="MODE">position</field>
+          <field name="OFFSET">FALSE</field>
+          <value name="TARGETOBJ">
+            <block type="objectList" id=";w*}L,==JJ7)z~$Qyz{[">
+              <field name="FIELDNAME">Esqueleto_Bone.R</field>
+            </block>
+          </value>
+          <value name="X">
+            <block type="math_arithmetic" id="+]EL7VS0n*|Iexj{ZYEa">
+              <field name="OP">MULTIPLY</field>
+              <value name="A">
+                <shadow type="math_number" id="^,,37AExheKlCw)UFvTq">
+                  <field name="NUM">-0.61</field>
+                </shadow>
+              </value>
+              <value name="B">
+                <shadow type="math_number" id="{pAnIt.o%iUs)J`h^]F=">
+                  <field name="NUM">2</field>
+                </shadow>
+                <block type="getTextureParam" id="jZdxi,E`e}@CvO|87zqA">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" flextexinput="false"></mutation>
+                  <field name="WHAT">ASPECT</field>
+                  <field name="TEX_NAME">descarga3.jpg</field>
+                  <value name="MATERIAL">
+                    <block type="materialList" id="M.^dk{kjsWf4ABK2TAgI">
+                      <field name="FIELDNAME">M_Cuadro_Foto_04</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+            </block>
+          </value>
+          <next>
+            <block type="setObjTransform" id="x}lM`y(FWq{/2_G7am?C">
+              <field name="MODE">position</field>
+              <field name="OFFSET">FALSE</field>
+              <value name="TARGETOBJ">
+                <block type="objectList" id="gAUV=UBLuGZOJZxI}4J#">
+                  <field name="FIELDNAME">Esqueleto_Bone.L</field>
+                </block>
+              </value>
+              <value name="X">
+                <block type="math_arithmetic" id="n;e}Jq2F1SI~;LaZT9XQ">
+                  <field name="OP">MULTIPLY</field>
+                  <value name="A">
+                    <shadow type="math_number" id="qVX6fi6/d[|^JC`CtZ;l">
+                      <field name="NUM">0.61</field>
+                    </shadow>
+                  </value>
+                  <value name="B">
+                    <shadow type="math_number">
+                      <field name="NUM">2</field>
+                    </shadow>
+                    <block type="getTextureParam" id="b4vjJ1j8bs,?=ZuC%e9?">
+                      <mutation xmlns="http://www.w3.org/1999/xhtml" flextexinput="false"></mutation>
+                      <field name="WHAT">ASPECT</field>
+                      <field name="TEX_NAME">descarga3.jpg</field>
+                      <value name="MATERIAL">
+                        <block type="materialList" id="F,kN[r8vyQn/~T8vH#9;">
+                          <field name="FIELDNAME">M_Cuadro_Foto_04</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                </block>
+              </value>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenHovered" id="78JOsqz5L~q$Cyz5E6{}" x="1010" y="610">
+      <value name="VALUE">
+        <block type="objectList" id="=E(8XCXZ*T!_]!nYp;0c">
+          <field name="FIELDNAME">M_Piso_01</field>
+        </block>
+      </value>
+      <statement name="DO_OVER">
+        <block type="outline" id="}vW0YAaCpY3B0`!$Onj*">
+          <field name="DO_WHAT">ENABLE</field>
+          <value name="TARGET">
+            <block type="objectList" id="`/YUj*~o%KD!:BM,}ntK">
+              <field name="FIELDNAME">M_Piso_01</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <statement name="DO_OUT">
+        <block type="outline" id="#|`}x~9:Usy?6y09dl3.">
+          <field name="DO_WHAT">DISABLE</field>
+          <value name="TARGET">
+            <block type="objectList" id="1iu.#Lpj[dMUyGDQ1iN~">
+              <field name="FIELDNAME">M_Piso_01</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <next>
+        <block type="whenClicked" id="}W}S2)2zDLAUe7]r~k%|">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+          <value name="VALUE">
+            <block type="objectList" id="e.-8(SW*DP.-[[b7TuOD">
+              <field name="FIELDNAME">M_Piso_01</field>
+            </block>
+          </value>
+          <statement name="DO">
+            <block type="assignMaterial" id="r`/ZK,AkS%OIY2g]cPMp">
+              <value name="VALUE2">
+                <block type="materialList" id="FP@UPTb?Mwn+T{_=x?kG">
+                  <field name="FIELDNAME">M_billar_piso_01</field>
+                </block>
+              </value>
+              <value name="VALUE1">
+                <block type="objectList" id="vp.#n[Jh(=g(07lV.9M1">
+                  <field name="FIELDNAME">PISO</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+          <next>
+            <block type="whenHovered" id="m~NINO4xq@Udv.3{^n-?">
+              <value name="VALUE">
+                <block type="objectList" id="~{O,Gh=C4FdfY3(/(8WQ">
+                  <field name="FIELDNAME">M_Piso_02</field>
+                </block>
+              </value>
+              <statement name="DO_OVER">
+                <block type="outline" id="f77)7{2_Ek`B^Us{3VbD">
+                  <field name="DO_WHAT">ENABLE</field>
+                  <value name="TARGET">
+                    <block type="objectList" id="t9{{UN03zN_c:]M!tF!(">
+                      <field name="FIELDNAME">M_Piso_02</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+              <statement name="DO_OUT">
+                <block type="outline" id="#uHXSF3m8xzXUyl#Zc[R">
+                  <field name="DO_WHAT">DISABLE</field>
+                  <value name="TARGET">
+                    <block type="objectList" id="v|h@{s0S%lX{L`{iif%^">
+                      <field name="FIELDNAME">M_Piso_02</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+              <next>
+                <block type="whenClicked" id=",S4%6?6RDr(=MMqZDEd:">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+                  <value name="VALUE">
+                    <block type="objectList" id="q+qr$_tVi./*!}J^*AaT">
+                      <field name="FIELDNAME">M_Piso_02</field>
+                    </block>
+                  </value>
+                  <statement name="DO">
+                    <block type="assignMaterial" id="FZ$;gW(]z[{~L66K;tF$">
+                      <value name="VALUE2">
+                        <block type="materialList" id="$c.h3ykCu4W1xlv6s,75">
+                          <field name="FIELDNAME">M_billar_piso_02</field>
+                        </block>
+                      </value>
+                      <value name="VALUE1">
+                        <block type="objectList" id="l8hgHp/Onq)2K`OyaYWb">
+                          <field name="FIELDNAME">PISO</field>
+                        </block>
+                      </value>
+                    </block>
+                  </statement>
+                  <next>
+                    <block type="whenHovered" id=";B}ePS2zkAe]tp9?hS/x">
+                      <value name="VALUE">
+                        <block type="objectList" id="D|1fP|EYsWmS3F7QTob*">
+                          <field name="FIELDNAME">M_Piso_03</field>
+                        </block>
+                      </value>
+                      <statement name="DO_OVER">
+                        <block type="outline" id="h{6j@b2=q!vYSI/HxBOF">
+                          <field name="DO_WHAT">ENABLE</field>
+                          <value name="TARGET">
+                            <block type="objectList" id="a3D]UIWaM`p7_o2c+o6A">
+                              <field name="FIELDNAME">M_Piso_03</field>
+                            </block>
+                          </value>
+                        </block>
+                      </statement>
+                      <statement name="DO_OUT">
+                        <block type="outline" id="^[[)LiEKeq?M8$dJI:E!">
+                          <field name="DO_WHAT">DISABLE</field>
+                          <value name="TARGET">
+                            <block type="objectList" id="ML/_;F3xq/};/EhJt*Fw">
+                              <field name="FIELDNAME">M_Piso_03</field>
+                            </block>
+                          </value>
+                        </block>
+                      </statement>
+                      <next>
+                        <block type="whenClicked" id=",I85%U*~fn.7W5M*1qWV">
+                          <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+                          <value name="VALUE">
+                            <block type="objectList" id="Fyt[Oc?{`{nmBy7Y=D@3">
+                              <field name="FIELDNAME">M_Piso_03</field>
+                            </block>
+                          </value>
+                          <statement name="DO">
+                            <block type="assignMaterial" id="E~{3iM=d!Qp,+uD6w64m">
+                              <value name="VALUE2">
+                                <block type="materialList" id="zz,]FU4Svk@Tq2OZD7ts">
+                                  <field name="FIELDNAME">M_billar_piso_03</field>
+                                </block>
+                              </value>
+                              <value name="VALUE1">
+                                <block type="objectList" id="~MCL+m%8/MAh,FP6etKj">
+                                  <field name="FIELDNAME">PISO</field>
+                                </block>
+                              </value>
+                            </block>
+                          </statement>
+                          <next>
+                            <block type="whenHovered" id="l(@@_wFoTY[69()f@u/.">
+                              <value name="VALUE">
+                                <block type="objectList" id="5mOk/hm`+ZFz$CRawsfa">
+                                  <field name="FIELDNAME">M_Piso_CargarImagen</field>
+                                </block>
+                              </value>
+                              <statement name="DO_OVER">
+                                <block type="outline" id="`B:oR:*lE$Rr3Q#S3eY!">
+                                  <field name="DO_WHAT">ENABLE</field>
+                                  <value name="TARGET">
+                                    <block type="objectList" id="UovS)-|_I(6Og:g^8NYI">
+                                      <field name="FIELDNAME">M_Piso_CargarImagen</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </statement>
+                              <statement name="DO_OUT">
+                                <block type="outline" id="y0Ei;YaC2GQwZuZnyrvf">
+                                  <field name="DO_WHAT">DISABLE</field>
+                                  <value name="TARGET">
+                                    <block type="objectList" id="]hA2iTQ81l4%fR$q-Qcp">
+                                      <field name="FIELDNAME">M_Piso_CargarImagen</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </statement>
+                              <next>
+                                <block type="whenClicked" id="pX;[8kk2%nNo8*G=.]Bn">
+                                  <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+                                  <value name="VALUE">
+                                    <block type="objectList" id="fKBUN`:{{w(R@}3L=IJ%">
+                                      <field name="FIELDNAME">M_Piso_CargarImagen</field>
+                                    </block>
+                                  </value>
+                                  <statement name="DO">
+                                    <block type="openFile" id="~5Nq1YYVdz!xPb%)3btB">
+                                      <statement name="DO">
+                                        <block type="replaceTexture" id="RZ65vy=JDCw5Y1[_o=,Y">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" enabledoslot="true" flextexinput="false"></mutation>
+                                          <field name="OLD_TEX_NAME">Tex_piso_CargarImagen</field>
+                                          <value name="MATERIAL">
+                                            <block type="materialList" id="p?XFt^9g:X,8kP;(EG~H">
+                                              <field name="FIELDNAME">M_billar_piso_03</field>
+                                            </block>
+                                          </value>
+                                          <value name="NEW_TEX_URL">
+                                            <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                                              <field name="TEXT">./newTexture.png</field>
+                                            </shadow>
+                                            <block type="openedFile" id="@0)6fbG+KWkA+/Yb(J$;"/>
+                                          </value>
+                                          <statement name="DO">
+                                            <block type="assignMaterial" id="GVAV`J@B*w_OUvVrDV!N">
+                                              <value name="VALUE2">
+                                                <block type="materialList" id="VlasA1OQe?2z_?MTYh#)">
+                                                  <field name="FIELDNAME">M_billar_piso_03</field>
+                                                </block>
+                                              </value>
+                                              <value name="VALUE1">
+                                                <block type="objectList" id="cE]?/f,nbOUd@olOG@6S">
+                                                  <field name="FIELDNAME">PISO</field>
+                                                </block>
+                                              </value>
+                                            </block>
+                                          </statement>
+                                          <next>
+                                            <block type="sendData" id="6^UKFM975B7$IQn_Dh=q">
+                                              <value name="DATA">
+                                                <block type="openedFile" id="te}hU/g5%Y}Kd1A!{MC]"/>
+                                              </value>
+                                              <value name="URL">
+                                                <shadow type="text" id="jakNuLvwmL[z]n{UZGsI">
+                                                  <field name="TEXT">https://sandbox.soft8soft.com/wp-json/verge3d/v1/upload_file/</field>
+                                                </shadow>
+                                              </value>
+                                              <statement name="DO">
+                                                <block type="variables_set" id=")+/!moxJ(kYpz3Q5LT{1">
+                                                  <field name="VAR" id="=AhL]2@zMA_2MTlwedf}">saved_conf_url</field>
+                                                  <value name="VALUE">
+                                                    <block type="setUrlParam" id="yqs/U]l.R@8@A!w=y5q6">
+                                                      <value name="URL">
+                                                        <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                                                          <field name="TEXT">https://sandbox.soft8soft.com/</field>
+                                                        </shadow>
+                                                        <block type="getUrlData" id="n}t*:+$=z/L7CsQ@*.[3">
+                                                          <field name="KIND">URL</field>
+                                                          <field name="PARENT">FALSE</field>
+                                                        </block>
+                                                      </value>
+                                                      <value name="NAME">
+                                                        <shadow type="text" id="OVowZu/3(WmhuJ+FuSn-">
+                                                          <field name="TEXT">image_url</field>
+                                                        </shadow>
+                                                      </value>
+                                                      <value name="VALUE">
+                                                        <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                                                          <field name="TEXT"></field>
+                                                        </shadow>
+                                                        <block type="dictGet" id="_X.`x8fM}z|;7E{D|daI">
+                                                          <value name="DICT">
+                                                            <block type="loadedFile" id="(bCY:M5~*P*bh[kC}*M1"/>
+                                                          </value>
+                                                          <value name="KEY">
+                                                            <shadow type="text" id="5T]k]OLq#[/;!pp9~5G_">
+                                                              <field name="TEXT">link</field>
+                                                            </shadow>
+                                                          </value>
+                                                        </block>
+                                                      </value>
+                                                    </block>
+                                                  </value>
+                                                  <next>
+                                                    <block type="openWebPage" id="QP]YM#PLj9k2~zSEDxtx">
+                                                      <field name="MODE">NO_RELOAD</field>
+                                                      <value name="URL">
+                                                        <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                                                          <field name="TEXT">https://www.soft8soft.com/</field>
+                                                        </shadow>
+                                                        <block type="variables_get" id="t6X,dVid^a:ag%nr-OVw">
+                                                          <field name="VAR" id="=AhL]2@zMA_2MTlwedf}">saved_conf_url</field>
+                                                        </block>
+                                                      </value>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </statement>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </statement>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenHovered" id="g+eH/:..Q!#[$btjdmCf" x="-430" y="710">
+      <value name="VALUE">
+        <block type="objectList" id="C@JO@d,NVTRB)F48hp~B">
+          <field name="FIELDNAME">M_pared_01</field>
+        </block>
+      </value>
+      <statement name="DO_OVER">
+        <block type="outline" id="-4eTy;fHzXq]q+?(L4tz">
+          <field name="DO_WHAT">ENABLE</field>
+          <value name="TARGET">
+            <block type="objectList" id="S6Fw/_/]AO(l^Nh8kG*L">
+              <field name="FIELDNAME">M_pared_01</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <statement name="DO_OUT">
+        <block type="outline" id="zH^`;|P0cvlL#{{xl5*R">
+          <field name="DO_WHAT">DISABLE</field>
+          <value name="TARGET">
+            <block type="objectList" id="14[JS0`x2pj6iNHTi40;">
+              <field name="FIELDNAME">M_pared_01</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <next>
+        <block type="whenClicked" id=",}bR`jqadi=xb%.]rCPI">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+          <value name="VALUE">
+            <block type="objectList" id="TXVhaK7}6f/d$=CM^ijr">
+              <field name="FIELDNAME">M_pared_01</field>
+            </block>
+          </value>
+          <statement name="DO">
+            <block type="assignMaterial" id="~E!-MN)awpv8Dh5Q1oPw">
+              <value name="VALUE2">
+                <block type="materialList" id="FUyN4:J.,R.:oc-Yxv4|">
+                  <field name="FIELDNAME">M_Billar_Pared_01</field>
+                </block>
+              </value>
+              <value name="VALUE1">
+                <block type="objectList" id="0,+IT8^Knr|`D8KYAB)f">
+                  <field name="FIELDNAME">PARED</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+          <next>
+            <block type="whenHovered" id="+O2C.mW%(DhS79`xD=UN">
+              <value name="VALUE">
+                <block type="objectList" id=":TX0P;t(:whQLL$sYkgI">
+                  <field name="FIELDNAME">M_pared_02</field>
+                </block>
+              </value>
+              <statement name="DO_OVER">
+                <block type="outline" id="G:-%*|t=UZnE(G?iD(s(">
+                  <field name="DO_WHAT">ENABLE</field>
+                  <value name="TARGET">
+                    <block type="objectList" id="~WR7UPNft_eac1pb#P6#">
+                      <field name="FIELDNAME">M_pared_02</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+              <statement name="DO_OUT">
+                <block type="outline" id="s(?8]tnhhDFwed~`R_FJ">
+                  <field name="DO_WHAT">DISABLE</field>
+                  <value name="TARGET">
+                    <block type="objectList" id="`Q[h0d?AiZPHTCptO3J~">
+                      <field name="FIELDNAME">M_pared_02</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+              <next>
+                <block type="whenClicked" id="}OZ3^Y84}dyNPmg2F$QJ">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+                  <value name="VALUE">
+                    <block type="objectList" id="xGV|E?@s|^IXIQ%$ES5w">
+                      <field name="FIELDNAME">M_pared_02</field>
+                    </block>
+                  </value>
+                  <statement name="DO">
+                    <block type="assignMaterial" id="6XiGyHzW3h)+o5jmfC`E">
+                      <value name="VALUE2">
+                        <block type="materialList" id="-N(a)gi{vc^V?`Pen^hL">
+                          <field name="FIELDNAME">M_Billar_Pared_02</field>
+                        </block>
+                      </value>
+                      <value name="VALUE1">
+                        <block type="objectList" id="b-$%uyKz3z9N2Fk%:?ux">
+                          <field name="FIELDNAME">PARED</field>
+                        </block>
+                      </value>
+                    </block>
+                  </statement>
+                  <next>
+                    <block type="whenHovered" id="eN5=qkT{=qD?Tms18P^6">
+                      <value name="VALUE">
+                        <block type="objectList" id=".Nhi`4%p$eZ!5d!0_,nT">
+                          <field name="FIELDNAME">M_pared_03</field>
+                        </block>
+                      </value>
+                      <statement name="DO_OVER">
+                        <block type="outline" id="313p;GY8YhlNb2#^Hr98">
+                          <field name="DO_WHAT">ENABLE</field>
+                          <value name="TARGET">
+                            <block type="objectList" id="!8s!I6/Trr+W(w(@O?{l">
+                              <field name="FIELDNAME">M_pared_03</field>
+                            </block>
+                          </value>
+                        </block>
+                      </statement>
+                      <statement name="DO_OUT">
+                        <block type="outline" id="/z0V!$PG[W@C.Pv-W-+x">
+                          <field name="DO_WHAT">DISABLE</field>
+                          <value name="TARGET">
+                            <block type="objectList" id="fNa01]`KlgQW#L_]dGWs">
+                              <field name="FIELDNAME">M_pared_03</field>
+                            </block>
+                          </value>
+                        </block>
+                      </statement>
+                      <next>
+                        <block type="whenClicked" id="FQTFFPxByPi[e]bn9ci6">
+                          <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+                          <value name="VALUE">
+                            <block type="objectList" id="Ets:IYWGANzWCWQf:Nqs">
+                              <field name="FIELDNAME">M_pared_03</field>
+                            </block>
+                          </value>
+                          <statement name="DO">
+                            <block type="assignMaterial" id="$]FDl$uwy3KPal;L^@V_">
+                              <value name="VALUE2">
+                                <block type="materialList" id="G8e9R4gRWI~!SabxyfR+">
+                                  <field name="FIELDNAME">M_Billar_Pared_03</field>
+                                </block>
+                              </value>
+                              <value name="VALUE1">
+                                <block type="objectList" id="gMs}u7*:FcQ.S_dcdk#.">
+                                  <field name="FIELDNAME">PARED</field>
+                                </block>
+                              </value>
+                            </block>
+                          </statement>
+                          <next>
+                            <block type="whenHovered" id="ff};KBt:R9P~nOdVj~|s">
+                              <value name="VALUE">
+                                <block type="objectList" id="sg_i8+2ncyfaaAwrz1$~">
+                                  <field name="FIELDNAME">M_pared_CargarImagen</field>
+                                </block>
+                              </value>
+                              <statement name="DO_OVER">
+                                <block type="outline" id="H5`@F5Qa4qTP,gel4-in">
+                                  <field name="DO_WHAT">ENABLE</field>
+                                  <value name="TARGET">
+                                    <block type="objectList" id="a,+^z(}q;NW_~[.,PTv,">
+                                      <field name="FIELDNAME">M_pared_CargarImagen</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </statement>
+                              <statement name="DO_OUT">
+                                <block type="outline" id="]Y_V?2`[eu#Wa+0pqfoG">
+                                  <field name="DO_WHAT">DISABLE</field>
+                                  <value name="TARGET">
+                                    <block type="objectList" id="DCh4$qrStKmk9{ltq4d_">
+                                      <field name="FIELDNAME">M_pared_CargarImagen</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </statement>
+                              <next>
+                                <block type="whenClicked" id="hbLo%^^4[.NpS+;Ub0m:">
+                                  <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+                                  <value name="VALUE">
+                                    <block type="objectList" id="A+e-@Zg;Ut7DpUMiEA-m">
+                                      <field name="FIELDNAME">M_pared_CargarImagen</field>
+                                    </block>
+                                  </value>
+                                  <statement name="DO">
+                                    <block type="openFile" id=",BiNJ-[{]H~)8MxMu:$v">
+                                      <statement name="DO">
+                                        <block type="replaceTexture" id="?-#X~cQF/uDs*=omM)9a">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" enabledoslot="true" flextexinput="false"></mutation>
+                                          <field name="OLD_TEX_NAME">Tex_pared_CargarImagen</field>
+                                          <value name="MATERIAL">
+                                            <block type="materialList" id="$isX{~6S+)dId~qwXp{;">
+                                              <field name="FIELDNAME">M_Billar_Pared_03</field>
+                                            </block>
+                                          </value>
+                                          <value name="NEW_TEX_URL">
+                                            <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                                              <field name="TEXT">./newTexture.png</field>
+                                            </shadow>
+                                            <block type="openedFile" id="cKezz5J|ggRgCcyzJ868"/>
+                                          </value>
+                                          <statement name="DO">
+                                            <block type="assignMaterial" id="Etl2Y@tt*g.FZ!duWVr^">
+                                              <value name="VALUE2">
+                                                <block type="materialList" id="i~43qD_rjAdb4Ot_mEq^">
+                                                  <field name="FIELDNAME">M_Billar_Pared_03</field>
+                                                </block>
+                                              </value>
+                                              <value name="VALUE1">
+                                                <block type="objectList" id="98^|[-9_UkbInC6[Yz67">
+                                                  <field name="FIELDNAME">PARED</field>
+                                                </block>
+                                              </value>
+                                            </block>
+                                          </statement>
+                                          <next>
+                                            <block type="sendData" id="j:@(dSdI*#R2Z|A=#eUw">
+                                              <value name="DATA">
+                                                <block type="openedFile" id="gMfHi;7ZdfI2VVF7cm41"/>
+                                              </value>
+                                              <value name="URL">
+                                                <shadow type="text" id="q@1|W/W3h}=zNMSt|+i|">
+                                                  <field name="TEXT">https://sandbox.soft8soft.com/wp-json/verge3d/v1/upload_file/</field>
+                                                </shadow>
+                                              </value>
+                                              <statement name="DO">
+                                                <block type="variables_set" id="7SJNgk.:P8EzI8W+JoKi">
+                                                  <field name="VAR" id="=AhL]2@zMA_2MTlwedf}">saved_conf_url</field>
+                                                  <value name="VALUE">
+                                                    <block type="setUrlParam" id="l@qd9itVJ4x0]k_a%1vZ">
+                                                      <value name="URL">
+                                                        <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                                                          <field name="TEXT">https://sandbox.soft8soft.com/</field>
+                                                        </shadow>
+                                                        <block type="getUrlData" id="UZb}_~-^7Bavll9TUtM0">
+                                                          <field name="KIND">URL</field>
+                                                          <field name="PARENT">FALSE</field>
+                                                        </block>
+                                                      </value>
+                                                      <value name="NAME">
+                                                        <shadow type="text" id="{f4SCpB%aIW~Iv.~9rof">
+                                                          <field name="TEXT">image_url</field>
+                                                        </shadow>
+                                                      </value>
+                                                      <value name="VALUE">
+                                                        <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                                                          <field name="TEXT"></field>
+                                                        </shadow>
+                                                        <block type="dictGet" id=",?UJJ7H52`:MA~5x;ue*">
+                                                          <value name="DICT">
+                                                            <block type="loadedFile" id="j@b4Jp}AE~]EkHM$dLq="/>
+                                                          </value>
+                                                          <value name="KEY">
+                                                            <shadow type="text" id="Pb:Rl_itXjC=9C,D;)I@">
+                                                              <field name="TEXT">link</field>
+                                                            </shadow>
+                                                          </value>
+                                                        </block>
+                                                      </value>
+                                                    </block>
+                                                  </value>
+                                                  <next>
+                                                    <block type="openWebPage" id="G*2y|WXe,etyK]PJxLHQ">
+                                                      <field name="MODE">NO_RELOAD</field>
+                                                      <value name="URL">
+                                                        <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                                                          <field name="TEXT">https://www.soft8soft.com/</field>
+                                                        </shadow>
+                                                        <block type="variables_get" id="qAaHOlhyP*{[Kzr(-c@N">
+                                                          <field name="VAR" id="=AhL]2@zMA_2MTlwedf}">saved_conf_url</field>
+                                                        </block>
+                                                      </value>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </statement>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </statement>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="variables_set" id="fXBogP`OUu*rvL4)?NB]" x="-430" y="1730">
+      <field name="VAR" id="smfYot=Kva!@0hkSBsKm">EsferaBool</field>
+      <value name="VALUE">
+        <block type="logic_boolean" id="lCS0bKp%Ul(`4^Hqy8GR">
+          <field name="BOOL">FALSE</field>
+        </block>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="hide" id="P+hf!t$n0M9ChYcSu[Kw" x="-430" y="1790">
+      <value name="VALUE">
+        <block type="objectList" id="XZ]Ur]q~C0Zlaor^*u),">
+          <field name="FIELDNAME">Cubo</field>
+        </block>
+      </value>
+      <next>
+        <block type="variables_set" id="cHZry)r,1u~omnJTi/o|">
+          <field name="VAR" id="7~W[|[L=/KV7IBw2Uneb">cuadrobool</field>
+          <value name="VALUE">
+            <block type="logic_boolean" id=")7*Yz,f1bJPQU`!6o4![">
+              <field name="BOOL">FALSE</field>
+            </block>
+          </value>
+          <next>
+            <block type="whenHovered" id="VZg.{6dI^`*[gRs#+?C?">
+              <value name="VALUE">
+                <block type="objectList" id="VCPg9!ozITil/+6d5[#U">
+                  <field name="FIELDNAME">billar_Cuadro.007</field>
+                </block>
+              </value>
+              <statement name="DO_OVER">
+                <block type="outline" id="|WzL3Wv:@kYEh.zr-(m?">
+                  <field name="DO_WHAT">ENABLE</field>
+                  <value name="TARGET">
+                    <block type="objectList" id="GrxhSJ8-t0QMB^=`Om{H">
+                      <field name="FIELDNAME">billar_Cuadro.007</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="controls_if" id=".HfkBRmn!{v(X9oFdC|.">
+                      <value name="IF0">
+                        <block type="logic_compare" id="2m=mbK?V*~r/-*J40S~l">
+                          <field name="OP">EQ</field>
+                          <value name="A">
+                            <block type="logic_boolean" id="C%vc$Ta`[PFt|0r$^zKs">
+                              <field name="BOOL">FALSE</field>
+                            </block>
+                          </value>
+                          <value name="B">
+                            <block type="variables_get" id="GxvKy*7FFWjH)aYZ00lg">
+                              <field name="VAR" id="7~W[|[L=/KV7IBw2Uneb">cuadrobool</field>
+                            </block>
+                          </value>
+                        </block>
+                      </value>
+                      <statement name="DO0">
+                        <block type="variables_set" id="SN!xleV{CKfdq]AMp=o7">
+                          <field name="VAR" id="7~W[|[L=/KV7IBw2Uneb">cuadrobool</field>
+                          <value name="VALUE">
+                            <block type="logic_boolean" id="0~woKaL8F(vNJL}I55SJ">
+                              <field name="BOOL">TRUE</field>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="show" id="6md^/cdD]z3WJgOrEx2@">
+                              <value name="VALUE">
+                                <block type="objectList" id="U3U2V[2AX189DO6)-Ytd">
+                                  <field name="FIELDNAME">Cubo</field>
+                                </block>
+                              </value>
+                              <next>
+                                <block type="playAnimationAdv" id="grDZAwj7.7`|1?.3gDg!">
+                                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="true"></mutation>
+                                  <field name="REVERSED">FALSE</field>
+                                  <field name="LOOP">LoopOnce</field>
+                                  <value name="VALUE">
+                                    <block type="animationList" id="(LBpK+D/hp$Pi`68VVIy">
+                                      <field name="FIELDNAME">Cubo</field>
+                                    </block>
+                                  </value>
+                                  <statement name="DO">
+                                    <block type="setTimeout" id="K#vym(n/`+c/!AKUOQ$B">
+                                      <value name="VALUE">
+                                        <shadow type="math_number" id=",y6-fa35F:Suk*?F]usw">
+                                          <field name="NUM">4</field>
+                                        </shadow>
+                                      </value>
+                                      <statement name="DO">
+                                        <block type="playAnimationAdv" id="@pmsSt3lg5~o]_Y]d!tq">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                          <field name="REVERSED">TRUE</field>
+                                          <field name="LOOP">LoopOnce</field>
+                                          <value name="VALUE">
+                                            <block type="animationList" id="ksQ6#i,e^@~_L#BmhK!$">
+                                              <field name="FIELDNAME">Cubo</field>
+                                            </block>
+                                          </value>
+                                          <value name="FROM">
+                                            <block type="math_number" id="P@kBx!9Px{GXU/jC*a`Z">
+                                              <field name="NUM">0</field>
+                                            </block>
+                                          </value>
+                                          <value name="TO">
+                                            <block type="math_number" id="Qml^dEf~8RKaI`[X#R0V">
+                                              <field name="NUM">15</field>
+                                            </block>
+                                          </value>
+                                          <statement name="DO">
+                                            <block type="variables_set" id="LA4g2BuYr:9tsYGB+$dN">
+                                              <field name="VAR" id="7~W[|[L=/KV7IBw2Uneb">cuadrobool</field>
+                                              <value name="VALUE">
+                                                <block type="logic_boolean" id="@h,@=`84:CLGyoW[CR-o">
+                                                  <field name="BOOL">FALSE</field>
+                                                </block>
+                                              </value>
+                                              <next>
+                                                <block type="hide" id="$G}IKG/UOaqe8^yR%LJ4">
+                                                  <value name="VALUE">
+                                                    <block type="objectList" id="SqcxH_`d-iVtlE/5kDSF">
+                                                      <field name="FIELDNAME">Cubo</field>
+                                                    </block>
+                                                  </value>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </statement>
+                                        </block>
+                                      </statement>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </statement>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+              <statement name="DO_OUT">
+                <block type="outline" id="s_v,(D%zZv?0NwJv-!t(">
+                  <field name="DO_WHAT">DISABLE</field>
+                  <value name="TARGET">
+                    <block type="objectList" id="/3vgY$]|nQzM=Ou?U]C#">
+                      <field name="FIELDNAME">billar_Cuadro.007</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="variables_set" id="v5#EbLpy6WkM,i)$6aEn" x="-450" y="2310">
+      <field name="VAR" id=")*o_=fahOgfbRbkT+3@i">relogbool</field>
+      <value name="VALUE">
+        <block type="logic_boolean" id="A|uw~QxWT,EuXn(PVjb3">
+          <field name="BOOL">FALSE</field>
+        </block>
+      </value>
+      <next>
+        <block type="whenHovered" id="QrZp/DiLqgbBP$x]j~,U">
+          <value name="VALUE">
+            <block type="objectList" id="Ugno*I70m8T}j)BENI(W">
+              <field name="FIELDNAME">RELOG</field>
+            </block>
+          </value>
+          <statement name="DO_OVER">
+            <block type="outline" id="P-H3=%c04Bmhr@oh@u10">
+              <field name="DO_WHAT">ENABLE</field>
+              <value name="TARGET">
+                <block type="objectList" id="[$zGTyk;,:^{/_^GES3k">
+                  <field name="FIELDNAME">RELOG</field>
+                </block>
+              </value>
+              <next>
+                <block type="controls_if" id="7yt0$PJ;f.!3C0tdmD32">
+                  <value name="IF0">
+                    <block type="logic_compare" id="*w^)zxT1QP6s{TjbNYRb">
+                      <field name="OP">EQ</field>
+                      <value name="A">
+                        <block type="logic_boolean" id=":Fj-$E?{SWzVL:Y[W^Fb">
+                          <field name="BOOL">FALSE</field>
+                        </block>
+                      </value>
+                      <value name="B">
+                        <block type="variables_get" id="Q/Xf.d/I4H,Q).9pMItN">
+                          <field name="VAR" id=")*o_=fahOgfbRbkT+3@i">relogbool</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                  <statement name="DO0">
+                    <block type="variables_set" id="8OI4UKEnBA]yPq+=5ey;">
+                      <field name="VAR" id=")*o_=fahOgfbRbkT+3@i">relogbool</field>
+                      <value name="VALUE">
+                        <block type="logic_boolean" id=".SzWruCHp2q6bHeojtpo">
+                          <field name="BOOL">TRUE</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="playAnimationAdv" id="t_o=rWWHH9TX^9Nw76_N">
+                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="true"></mutation>
+                          <field name="REVERSED">FALSE</field>
+                          <field name="LOOP">LoopOnce</field>
+                          <value name="VALUE">
+                            <block type="animationList" id="ES-CSIQ74uQ*f6]k+S((">
+                              <field name="FIELDNAME">RELOG</field>
+                            </block>
+                          </value>
+                          <statement name="DO">
+                            <block type="variables_set" id="5OCU3c~?,,]}b`M*Gg.S">
+                              <field name="VAR" id=")*o_=fahOgfbRbkT+3@i">relogbool</field>
+                              <value name="VALUE">
+                                <block type="logic_boolean" id="r,ppls53r-pVm:=_~Q8W">
+                                  <field name="BOOL">FALSE</field>
+                                </block>
+                              </value>
+                            </block>
+                          </statement>
+                        </block>
+                      </next>
+                    </block>
+                  </statement>
+                </block>
+              </next>
+            </block>
+          </statement>
+          <statement name="DO_OUT">
+            <block type="outline" id="yHqJYV{|V@K!(%CTqEH/">
+              <field name="DO_WHAT">DISABLE</field>
+              <value name="TARGET">
+                <block type="objectList" id="qSQlJ-`^LV9Z6zS-vRZ7">
+                  <field name="FIELDNAME">RELOG</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+          <next>
+            <block type="whenHovered" id="phn=r?_,Htq#QiHP#d2D">
+              <value name="VALUE">
+                <block type="objectList" id="6^X~B7K22#FjX~g;)e#:">
+                  <field name="FIELDNAME">Cubo</field>
+                </block>
+              </value>
+              <statement name="DO_OVER">
+                <block type="outline" id="1S1D=,MbjC1CgleL|ER~">
+                  <field name="DO_WHAT">ENABLE</field>
+                  <value name="TARGET">
+                    <block type="objectList" id="pH;;2|wy-)%1.BODeKzH">
+                      <field name="FIELDNAME">Cubo</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+              <statement name="DO_OUT">
+                <block type="outline" id="=|/cn/ra3.{;:2w@euA$">
+                  <field name="DO_WHAT">DISABLE</field>
+                  <value name="TARGET">
+                    <block type="objectList" id="~0dw{T.z,,k;xWx0`|$y">
+                      <field name="FIELDNAME">Cubo</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+              <next>
+                <block type="whenHovered" id="MZ9rl)(F+S088s-+apMN">
+                  <value name="VALUE">
+                    <block type="objectList" id="h}lVX|RDv:QKyy-G#05d">
+                      <field name="FIELDNAME">Amazon_mesa</field>
+                    </block>
+                  </value>
+                  <statement name="DO_OVER">
+                    <block type="outline" id="?K/CIjwG,j^.PW/4!Rxe">
+                      <field name="DO_WHAT">ENABLE</field>
+                      <value name="TARGET">
+                        <block type="objectList" id="sI5YGnfp,KVvFpJ(*TPA">
+                          <field name="FIELDNAME">Amazon_mesa</field>
+                        </block>
+                      </value>
+                    </block>
+                  </statement>
+                  <statement name="DO_OUT">
+                    <block type="outline" id="[`kKd~R+g-vd|9GlpCby">
+                      <field name="DO_WHAT">DISABLE</field>
+                      <value name="TARGET">
+                        <block type="objectList" id="vf5p:4g?TM,*O{1wj+B.">
+                          <field name="FIELDNAME">Amazon_mesa</field>
+                        </block>
+                      </value>
+                    </block>
+                  </statement>
+                  <next>
+                    <block type="whenHovered" id="O6IvP_fRcU|s6bR0tvKQ">
+                      <value name="VALUE">
+                        <block type="objectList" id="4R~V@Hd}R4t)eUF]Ty~c">
+                          <field name="FIELDNAME">Amazon_mesa.001</field>
+                        </block>
+                      </value>
+                      <statement name="DO_OVER">
+                        <block type="outline" id="POYjoBi4J-Kx;OHJ`vjp">
+                          <field name="DO_WHAT">ENABLE</field>
+                          <value name="TARGET">
+                            <block type="objectList" id="8/-,k{oDVTBQ=@b*k`yS">
+                              <field name="FIELDNAME">Amazon_mesa.001</field>
+                            </block>
+                          </value>
+                        </block>
+                      </statement>
+                      <statement name="DO_OUT">
+                        <block type="outline" id="h=,[.gm2WS*mq4K0h2[#">
+                          <field name="DO_WHAT">DISABLE</field>
+                          <value name="TARGET">
+                            <block type="objectList" id="Y%pICe236FGUEilp8.AM">
+                              <field name="FIELDNAME">Amazon_mesa.001</field>
+                            </block>
+                          </value>
+                        </block>
+                      </statement>
+                      <next>
+                        <block type="whenClicked" id="gegY#WRkiK7F?B}-fF{e">
+                          <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+                          <value name="VALUE">
+                            <block type="objectList" id="+tp?+7V@0z`;Ofy7s!xa">
+                              <field name="FIELDNAME">Amazon_mesa.001</field>
+                            </block>
+                          </value>
+                          <statement name="DO">
+                            <block type="openWebPage" id="8T_^;GePCjE(bZHquzWP">
+                              <field name="MODE">NEW</field>
+                              <value name="URL">
+                                <shadow type="text" id="v0bl*1$KH2|5=x@uOXp_">
+                                  <field name="TEXT">https://www.amazon.com/s/ref=as_li_ss_tl?k=mesa+de+billar&amp;__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;ref=nb_sb_noss&amp;linkCode=ll2&amp;tag=tienda3d03-20&amp;linkId=9160db08ee5acd5dbeb668fd96d2d7c2&amp;language=es_US</field>
+                                </shadow>
+                              </value>
+                            </block>
+                          </statement>
+                          <next>
+                            <block type="whenClicked" id="}TReNu^0Bi!lB8E:E~w4">
+                              <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+                              <value name="VALUE">
+                                <block type="objectList" id="xgqzhGm^;LFjXSCn*JJ?">
+                                  <field name="FIELDNAME">Amazon_mesa</field>
+                                </block>
+                              </value>
+                              <statement name="DO">
+                                <block type="openWebPage" id="~if2T*4ILaCXCH:JT@.T">
+                                  <field name="MODE">NEW</field>
+                                  <value name="URL">
+                                    <shadow type="text" id="B8rf1|tA9;!)uUh3g15M">
+                                      <field name="TEXT">https://www.amazon.com/s/ref=as_li_ss_tl?k=mesa+de+billar&amp;__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;ref=nb_sb_noss&amp;linkCode=ll2&amp;tag=tienda3d03-20&amp;linkId=9160db08ee5acd5dbeb668fd96d2d7c2&amp;language=es_US</field>
+                                    </shadow>
+                                  </value>
+                                </block>
+                              </statement>
+                              <next>
+                                <block type="whenClicked" id="4wBAX#W/XPYz$pZXVQ]M">
+                                  <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+                                  <value name="VALUE">
+                                    <block type="objectList" id="x9iZFugim~:,[Szst_6j">
+                                      <field name="FIELDNAME">Cubo</field>
+                                    </block>
+                                  </value>
+                                  <statement name="DO">
+                                    <block type="openWebPage" id="BaO{y`R6|m?4Sj*uboIX">
+                                      <field name="MODE">NEW</field>
+                                      <value name="URL">
+                                        <shadow type="text" id="o/zmO{Ti1a|tF0z+BSSF">
+                                          <field name="TEXT">https://www.amazon.com/s/ref=as_li_ss_tl?k=cuadro+arte&amp;__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;ref=nb_sb_noss&amp;linkCode=ll2&amp;tag=tienda3d03-20&amp;linkId=5a0e893714637138f7343e023e688e0f&amp;language=es_US</field>
+                                        </shadow>
+                                      </value>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="addAnnotation" id="YeuX80!y375vbZkbG?V," x="130" y="2570">
+      <value name="ANNOTATION">
+        <shadow type="text" id="V1lf~3r@:k+zCRk.Im@A">
+          <field name="TEXT">2</field>
+        </shadow>
+      </value>
+      <value name="TARGET">
+        <block type="objectList" id="j/|%{GsoHLi]yt}%O4Iy">
+          <field name="FIELDNAME">billar_Cuadro.003</field>
+        </block>
+      </value>
+      <value name="CONTENTS">
+        <shadow type="text" id="CW69fNi6X#:Dq`*:c`e5">
+          <field name="TEXT">Cargar imagen.Click al cuadro.</field>
+        </shadow>
+      </value>
+      <value name="ID">
+        <shadow type="text" id=",.n)wrr3?[DE+EZzm~a-">
+          <field name="TEXT">poi_2</field>
+        </shadow>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="addAnnotation" id="i[z/W8j2za+[@}kuA.b2" x="90" y="2610">
+      <value name="ANNOTATION">
+        <shadow type="text" id=",L|WC*mB2!i}Vxf#+~V3">
+          <field name="TEXT">1</field>
+        </shadow>
+      </value>
+      <value name="TARGET">
+        <block type="objectList" id="eIuknND@=]^S4T^+/6Uh">
+          <field name="FIELDNAME">billar_Cuadro.007</field>
+        </block>
+      </value>
+      <value name="CONTENTS">
+        <shadow type="text" id="E:D~{LXFhX)Ea]g3oM{z">
+          <field name="TEXT">Anuncio desplegable. Click en anuncio.</field>
+        </shadow>
+      </value>
+      <value name="ID">
+        <shadow type="text" id="BDWNY-4C8^?aJ9P@=qiD">
+          <field name="TEXT">poi_1</field>
+        </shadow>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="setObjTransform" id="BasP`lN2jOFOG06$C@o_" x="147" y="2683">
+      <field name="MODE">position</field>
+      <field name="OFFSET">FALSE</field>
+      <value name="TARGETOBJ">
+        <block type="text" id="0#H,,$dw5dL`0=~3an5+">
+          <field name="TEXT">1</field>
+        </block>
+      </value>
+      <value name="X">
+        <block type="math_number" id="0%0[_b4gRl*96q9~DJ|+">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+      <value name="Y">
+        <block type="math_number" id="4Ot*@_OOF}ADo=_;N7OH">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenHovered" id="iQ.ugc0o4i4v[73QceU)" x="981" y="3010">
+      <value name="VALUE">
+        <block type="objectList" id="q_3t]QWZmY$:#b{%Jxr$">
+          <field name="FIELDNAME">Cubo</field>
+        </block>
+      </value>
+      <statement name="DO_OVER">
+        <block type="setHTMLElemStyle" id="VC3`|K5j#089|u7LsYXg">
+          <field name="PROPERTY">cursor</field>
+          <field name="PARENT">FALSE</field>
+          <value name="VALUE">
+            <block type="text" id="A)|woOIt!ks}?Hw?]*af">
+              <field name="TEXT">pointer</field>
+            </block>
+          </value>
+          <value name="ID">
+            <block type="DOMObjectSelector" id="4r5~T2)6DAO{HO,`xwET">
+              <field name="DOM_OBJECT">BODY</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <statement name="DO_OUT">
+        <block type="setHTMLElemStyle" id="V1Dg*]wWW}.al_[kG94,">
+          <field name="PROPERTY">cursor</field>
+          <field name="PARENT">FALSE</field>
+          <value name="VALUE">
+            <block type="text" id=":.Oi6ujKM3I(S/i^l^Ue">
+              <field name="TEXT">default</field>
+            </block>
+          </value>
+          <value name="ID">
+            <block type="DOMObjectSelector" id="jru#y54E_epp8ggzAF06">
+              <field name="DOM_OBJECT">BODY</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <next>
+        <block type="whenHovered" id="fxqP`xTAo~M0hw!cnnBu">
+          <value name="VALUE">
+            <block type="objectList" id="Z58KeAQX{B~W2,^gbP+7">
+              <field name="FIELDNAME">Amazon_mesa</field>
+            </block>
+          </value>
+          <statement name="DO_OVER">
+            <block type="setHTMLElemStyle" id="U|w`}7(i:#on/H.Xn-1m">
+              <field name="PROPERTY">cursor</field>
+              <field name="PARENT">FALSE</field>
+              <value name="VALUE">
+                <block type="text" id=")C^.uCPk8-[^cj)ZXe7]">
+                  <field name="TEXT">pointer</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="DOMObjectSelector" id="*}0C(vMuQX~mKpA6y1bZ">
+                  <field name="DOM_OBJECT">BODY</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+          <statement name="DO_OUT">
+            <block type="setHTMLElemStyle" id="_gf(HJ1*~#.HBC0S[zkS">
+              <field name="PROPERTY">cursor</field>
+              <field name="PARENT">FALSE</field>
+              <value name="VALUE">
+                <block type="text" id="%6H{6,c5NV^@;Cq%uRU~">
+                  <field name="TEXT">default</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="DOMObjectSelector" id="},[-q:Ub7I%%R6h#-!_S">
+                  <field name="DOM_OBJECT">BODY</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+          <next>
+            <block type="whenHovered" id="Ckn}Hj%2#JRcOKFq?jt6">
+              <value name="VALUE">
+                <block type="objectList" id="=6s-b]s@l(SS6W2f-jtk">
+                  <field name="FIELDNAME">Amazon_mesa.001</field>
+                </block>
+              </value>
+              <statement name="DO_OVER">
+                <block type="setHTMLElemStyle" id="[@]K+mVn?_{*k.yU2u7A">
+                  <field name="PROPERTY">cursor</field>
+                  <field name="PARENT">FALSE</field>
+                  <value name="VALUE">
+                    <block type="text" id="J!Oo7*69kmOkh+0tmy;a">
+                      <field name="TEXT">pointer</field>
+                    </block>
+                  </value>
+                  <value name="ID">
+                    <block type="DOMObjectSelector" id="#!`NTrDb/Qp3T/!TOKB/">
+                      <field name="DOM_OBJECT">BODY</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+              <statement name="DO_OUT">
+                <block type="setHTMLElemStyle" id="Z]4kw0hWChQ-z@RbebkZ">
+                  <field name="PROPERTY">cursor</field>
+                  <field name="PARENT">FALSE</field>
+                  <value name="VALUE">
+                    <block type="text" id="hyp)/v2M=]t5t%$`t*ZO">
+                      <field name="TEXT">default</field>
+                    </block>
+                  </value>
+                  <value name="ID">
+                    <block type="DOMObjectSelector" id="8n;MkFDr(@wvgI!9t4}!">
+                      <field name="DOM_OBJECT">BODY</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1037.2667236328125" viewport-y="-2.999998092651367" viewport-w="440" viewport-h="275" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>
